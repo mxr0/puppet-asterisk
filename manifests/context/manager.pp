@@ -2,7 +2,7 @@ define asterisk::context::manager (
   $ensure = 'present',
 
   $secret  = false,
-  $name = 'manager',
+  $manager_name = 'manager',
   $permit = '127.0.0.1/255.255.255.255',
   $read = 'system,call',
   $write = 'system,call') {

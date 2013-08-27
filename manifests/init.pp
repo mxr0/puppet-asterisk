@@ -17,7 +17,7 @@ class asterisk (
 
   shellvar {'RUNASTERISK':
     ensure  => present,
-    file    => '/etc/default/asterisk',
+    target  => '/etc/default/asterisk',
     value   => 'yes',
     require => Package['asterisk'],
     notify  => Service['asterisk'],

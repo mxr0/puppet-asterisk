@@ -59,7 +59,7 @@ class asterisk::params {
     resyncthreshold   => '1000',
     trunktimestamps   => 'yes',
     autokill          => 'yes',
-  } )
+  } 
 
   #### Internal module values
 

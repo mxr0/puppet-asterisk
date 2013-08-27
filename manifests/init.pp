@@ -2,8 +2,7 @@
 # them in your hash.
 class asterisk (
   $iax_options = $asterisk::params::iax_options,
-  )
-{
+) inherits asterisk::params {
   package {
     [$package,
     'asterisk-core-sounds-en-alaw',

@@ -11,7 +11,7 @@ class asterisk (
   $iax_options = $asterisk::params::iax_options,
 ) inherits asterisk::params {
   package {
-    [$package,
+    [$asterisk::params::package,
     'asterisk-core-sounds-en-alaw',
     'asterisk-core-sounds-en-gsm']:
     ensure => installed,
@@ -32,7 +32,7 @@ class asterisk (
 
   # Configuration directories
   if $dahdi == 'enable'{
-    class {'asterisk::dahdi':}
+    asterisk::dahdi {}
   }
   if $sip == 'enable'{
     asterisk::config_dotd {'/etc/asterisk/sip.conf':

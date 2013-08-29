@@ -2,7 +2,7 @@
 # them in your hash.
 class asterisk (
   $iax = $asterisk::params::iax,
-  $iax = $asterisk::params::iax,
+  $sip = $asterisk::params::sip,
   $voicemail = $asterisk::params::voicemail,
   $extentions = $asterisk::params::extentions,
   $queues = $asterisk::params::queues,

@@ -1,4 +1,4 @@
-class asterisk::dahdi inherits asterisk {
+class asterisk::dahdi {
 
   package {
     ['asterisk-dahdi',

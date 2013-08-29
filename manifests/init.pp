@@ -7,6 +7,7 @@ class asterisk (
   $extensions = $asterisk::params::extensions,
   $queues = $asterisk::params::queues,
   $manager = $asterisk::params::manager,
+  $dahdi = $asterisk::params::dahdi,
   $iax_options = $asterisk::params::iax_options,
 ) inherits asterisk::params {
   package {
@@ -30,6 +31,9 @@ class asterisk (
   }
 
   # Configuration directories
+  if $dahdi == 'enable'{
+    class {'asterisk::dahdi':}
+  }
   if $sip == 'enable'{
     asterisk::config_dotd {'/etc/asterisk/sip.conf':
       additional_paths => ['/etc/asterisk/sip.registry.d'],

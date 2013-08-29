@@ -4,7 +4,7 @@ class asterisk (
   $iax = $asterisk::params::iax,
   $sip = $asterisk::params::sip,
   $voicemail = $asterisk::params::voicemail,
-  $extentions = $asterisk::params::extentions,
+  $extensions = $asterisk::params::extensions,
   $queues = $asterisk::params::queues,
   $manager = $asterisk::params::manager,
   $iax_options = $asterisk::params::iax_options,

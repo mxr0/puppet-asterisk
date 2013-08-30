@@ -2,7 +2,7 @@ define asterisk::context::extensions (
   $ensure  = 'present',
   $source  = false,
   $content = false) {
-  require asterisk::extentions
+  require asterisk::extensions
 
   if $source {
     asterisk::dotd_file {"${name}.conf":

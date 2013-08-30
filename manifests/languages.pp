@@ -1,5 +1,5 @@
 # This Class descripes packets needed for the translated asterisk voice promtsk
-class asterisk::langage (
+class asterisk::language (
   $language = 'fr',
 )
 {

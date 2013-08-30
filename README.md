@@ -8,25 +8,25 @@ To install Asterisk on a server, simply use the following:
 This will install a plain version of Asterisk without any extra 
 Futures enabled. To enable any of the extra futures do the following:
 
-    ```puppet
+```puppet
   class { 'asterisk':
     sip        => enable,
     manager    => enable,
     extentions => enable,
     dahdi      => enable,
   }
-    ```
+```
 
 To include french sounds, you can use the following:
 
-    ```puppet
+```puppet
   class { 'asterisk':
     sip        => enable,
     manager    => enable,
     extentions => enable,
     languages      => ['french','german'],
   }
-    ```
+```
 
 Requirements
 ------------

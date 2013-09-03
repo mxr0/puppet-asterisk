@@ -32,7 +32,7 @@ define asterisk::context::sip (
   $dtmfmode = false) {
   require asterisk::sip
 
-  require asterisk::context::include {"sip":
+  asterisk::context::include {"sip":
     dir => "sip.conf.d",
   }
 

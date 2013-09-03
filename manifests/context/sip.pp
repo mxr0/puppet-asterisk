@@ -31,7 +31,7 @@ define asterisk::context::sip (
   $allow = [],
   $dtmfmode = false) {
   require asterisk::sip
-  require asterisk::context::include::sipconf
+  require asterisk::context::include::sipconfig
 
   asterisk::dotd_file {"sip_${name}.conf":
     ensure  => $ensure,

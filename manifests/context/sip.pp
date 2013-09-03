@@ -32,9 +32,8 @@ define asterisk::context::sip (
   $dtmfmode = false) {
   require asterisk::sip
 
-  file_line{ 'include /etc/asterisk/sip.context.d/*':
-      path => '/etc/asterisk/sip.conf',
-      line => "#include </etc/asterisk/sip.context.d/*.conf>",
+  require asterisk::context::include {"sip":
+    dir => "sip.conf.d",
   }
 
   asterisk::dotd_file {"sip_${name}.conf":

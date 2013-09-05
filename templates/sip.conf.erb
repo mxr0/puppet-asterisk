@@ -1105,11 +1105,5 @@ registerattempts=<%= @sip_options["registerattempts"] -%>             ; Number o
                                 ; Default is 0 tries, continue forever
 <% end -%>
 
-
-<% if defined('asterisk::registry::sip') -%>
 #include </etc/asterisk/sip.registry.d/*.conf>
-<% end -%>
-<% if defined('asterisk::context::sip') -%>
 #include </etc/asterisk/sip.conf.d/*.conf>
-<% end -%>
-

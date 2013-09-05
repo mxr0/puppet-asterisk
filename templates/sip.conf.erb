@@ -747,7 +747,7 @@ end -%>
 ;        externip = 12.34.56.78:9900     ; use this address and port.
 ;        externip = mynat.my.org:12600   ; Public address of my nat box.
 externip=<%= @sip_options["externip"] -%>
-<% elseif @sip_options.has_key?("externhost") -%>
+<% if @sip_options.has_key?("externhost") -%>
 ;   b. "externhost = hostname[:port]" is similar to "externip" except
 ;      that the hostname is looked up every "externrefresh" seconds
 ;      (default 10s). This can be useful when your NAT device lets you choose
@@ -758,7 +758,7 @@ externip=<%= @sip_options["externip"] -%>
 ;        externhost=foo.dyndns.net       ; refreshed periodically
 ;        externrefresh=180               ; change the refresh interval
 externhost=<%= @sip_options["externhost"] -%>
-<% elseif @sip_options.has_key?("stunaddr") -%>
+<% if @sip_options.has_key?("stunaddr") -%>
 ;   c. "stunaddr = stun.server[:port]" queries the STUN server specified
 ;      as an argument to obtain the external address/port.
 ;      Queries are also sent periodically every "externrefresh" seconds

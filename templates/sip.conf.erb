@@ -1106,10 +1106,10 @@ registerattempts=<%= @sip_options["registerattempts"] -%>             ; Number o
 <% end -%>
 
 
-<% if defined(asterisk::registry::sip) -%>
+<% if defined('asterisk::registry::sip') -%>
 #include </etc/asterisk/sip.registry.d/*.conf>
 <% end -%>
-<% if defined(asterisk::context::sip) -%>
+<% if defined('asterisk::context::sip') -%>
 #include </etc/asterisk/sip.conf.d/*.conf>
 <% end -%>
 

@@ -8,9 +8,9 @@ define asterisk::context::manager (
   require asterisk::manager
 
   asterisk::dotd_file {"${name}.conf":
-    ensure  => $ensure,
+    ensure   => $ensure,
     dotd_dir => 'manager.conf.d',
-    content => template('asterisk/context/manager.erb'),
+    content  => template('asterisk/context/manager.erb'),
     filename => "${name}.conf",
   }
 }

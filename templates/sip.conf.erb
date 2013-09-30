@@ -723,9 +723,9 @@ faxdetect =<%= @sip_options["faxdetect"] -%>
 ;      localnet=169.254.0.0/255.255.0.0 ; Zero conf local network
 <% end -%>
 <% if @sip_options.has_key?("localnet")
-  @sip_options["localnet"].cycle(1) {|x| -%>
+@sip_options["localnet"].each |x|{ -%>
 localnet=<%= x %>
-<% }
+<% end -%>
 end -%>
 
 <% if ( @sip_options.has_key?("externip") or  @sip_options.has_key?("externhost") or  @sip_options.has_key?("stunaddr") ) -%>

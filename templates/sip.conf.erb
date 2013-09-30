@@ -266,14 +266,14 @@ vmexten=<%= @sip_options["vmexten"] -%>              ; dialplan extension to rea
 <% end -%>
 
 <% if @sip_options.has_key?("disallow")
-  @sip_options["disallow"].cycle(1) {|x| -%>
+  @sip_options["disallow"].each do |x| -%>
 disallow=<%= x %>
-<% }
+<% end -%>
 end -%>
 <% if @sip_options.has_key?("allow")
-  @sip_options["allow"].cycle(1) {|x| -%>
+  @sip_options["allow"].each do |x| -%>
 allow=<%= x %>
-<% }
+<% end -%>
 end -%>
 
 
@@ -722,11 +722,11 @@ faxdetect =<%= @sip_options["faxdetect"] -%>
 ;      localnet=172.16.0.0/12           ; Another RFC1918 with CIDR notation
 ;      localnet=169.254.0.0/255.255.0.0 ; Zero conf local network
 <% end -%>
-<% if @sip_options.has_key?("localnet")
-@sip_options["localnet"].each |x|{ -%>
+<% if @sip_options.has_key?("localnet") -%>
+<% @sip_options["localnet"].each do |x| -%>
 localnet=<%= x %>
 <% end -%>
-end -%>
+<% end -%>
 
 <% if ( @sip_options.has_key?("externip") or  @sip_options.has_key?("externhost") or  @sip_options.has_key?("stunaddr") ) -%>
 ; + the "externally visible" address and port number to be used when talking
@@ -954,9 +954,9 @@ ignoreregexpire=<%= @sip_options["ignoreregexpire"] -%>            ; Enabling th
                                 ; You can have several "domain" settings
 <% end -%>
 <% if @sip_options.has_key?("domain")
-  @sip_options["domain"].cycle(1) {|x| -%>
+  @sip_options["domain"].each do |x| -%>
 domain=<%= x %>
-<% }
+<% end -%>
 end
 if @sip_options.has_key?("allowexternaldomains") -%>
 allowexternaldomains=<%= @sip_options["allowexternaldomains"] -%>         ; Disable INVITE and REFER to non-local domains

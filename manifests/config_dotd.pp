@@ -3,6 +3,7 @@ define asterisk::config_dotd (
   $additional_paths = [],
   $content = '',
   $source = '') {
+  include asterisk::install
 
   $dirname = ["${name}.d"]
   $paths = [$dirname, $additional_paths]

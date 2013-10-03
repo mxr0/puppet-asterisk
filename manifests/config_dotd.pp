@@ -4,6 +4,7 @@ define asterisk::config_dotd (
   $content = '',
   $source = '') {
   include asterisk::install
+  include asterisk::service
 
   $dirname = ["${name}.d"]
   $paths = [$dirname, $additional_paths]

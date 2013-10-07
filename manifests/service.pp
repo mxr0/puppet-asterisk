@@ -8,6 +8,12 @@ class asterisk::service (
       ensure  => running,
       require => Package['asterisk'],
     }
+  } else {
+    service {'asterisk':
+      enable  => 'false',
+      require => Package['asterisk'],
+    }
+  
   }
 
 }

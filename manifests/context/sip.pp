@@ -20,6 +20,7 @@ define asterisk::context::sip (
   $md5secret     = false,
   $pickupgroup   = false,
   $fromdomain    = false,
+  $fromuser      = false,
   $outboundproxy = false,
   $disallow      = [],
   $allow         = [],

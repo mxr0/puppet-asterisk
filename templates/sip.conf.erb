@@ -458,6 +458,7 @@ regextenonqualify=<%= @sip_options["regextenonqualify"] -%>          ; Default "
                                 ; extension for the peer
 ;
 <% end -%>
+
 <% if @sip_options.has_key?("t1min") -%>
 ;--------------------------- SIP timers ----------------------------------------------------
 ; These timers are used primarily in INVITE transactions. 
@@ -477,6 +478,7 @@ timerb=<%= @sip_options["timerb"] -%>                   ; Call setup timer. If a
                                 ; in this amount of time, the call will autocongest
                                 ; Defaults to 64*timert1
 <% end -%>
+
 <% if @sip_options.has_key?("rtptimeout") or @sip_options.has_key?("rtpholdtimeout") or @sip_options.has_key?("rtpkeepalive") -%>
 ;--------------------------- RTP timers ----------------------------------------------------
 ; These timers are currently used for both audio and video streams. The RTP timeouts
@@ -500,6 +502,7 @@ rtpholdtimeout=<%= @sip_options["rtpholdtimeout"] -%>             ; Terminate ca
 rtpkeepalive=<%= @sip_options["rtpkeepalive"] -%>            ; Send keepalives in the RTP stream to keep NAT open
                                 ; (default is off - zero)
 <% end -%>
+
 <% if @sip_options.has_key?("session-timers") -%>
 ;--------------------------- SIP Session-Timers (RFC 4028)------------------------------------
 ; SIP Session-Timers provide an end-to-end keep-alive mechanism for active SIP sessions.
@@ -527,8 +530,8 @@ session-minse=<%= @sip_options["session-minse"] -%>
 <% if @sip_options.has_key?("session-refresher") -%>
 session-refresher=<%= @sip_options["session-refresher"] -%>
 <% end -%>
+
 <% if @sip_options.has_key?("hash_users") -%>
-;
 ;--------------------------- HASH TABLE SIZES ------------------------------------------------
 ; For maximum efficiency, adjust the following
 ; values to be slightly larger than the maximum number of in-memory objects (devices).
@@ -548,6 +551,7 @@ hash_peers=<%= @sip_options["hash_peers"] -%>
 <% if @sip_options.has_key?("hash_dialogs") -%>
 hash_dialogs=<%= @sip_options["hash_dialogs"] -%>
 <% end -%>
+
 <% if @sip_options.has_key?("sipdebug") -%>
 ;--------------------------- SIP DEBUGGING ---------------------------------------------------
 sipdebug=<%= @sip_options["sipdebug"] -%>                 ; Turn on SIP debugging by default, from
@@ -561,6 +565,7 @@ recordhistory=<%= @sip_options["recordhistory"] -%>              ; Record SIP hi
 dumphistory=<%= @sip_options["dumphistory"] -%>                ; Dump SIP history at end of SIP dialogue
                                 ; SIP history is output to the DEBUG logging channel
 <% end -%>
+
 <% if @sip_options.has_key?("allowsubscribe") -%>
 ;--------------------------- STATUS NOTIFICATIONS (SUBSCRIPTIONS) ----------------------------
 ; You can subscribe to the status of extensions with a "hint" priority
@@ -617,6 +622,7 @@ notifycid=<%= @sip_options["notifycid"] -%>                ; Control whether cal
 callcounter=<%= @sip_options["callcounter"] -%>              ; Enable call counters on devices. This can be set per
                                 ; device too.
 <% end -%>
+
 <% if @sip_options.has_key?("t38pt_udptl") -%>
 ;----------------------------------------- T.38 FAX SUPPORT ----------------------------------
 ;
@@ -644,6 +650,7 @@ callcounter=<%= @sip_options["callcounter"] -%>              ; Enable call count
 ;                                       ; send 400 byte T.38 FAX packets to it.
 t38pt_udptl=<%= @sip_options["t38pt_udptl"] -%>
 <% end -%>
+
 <% if @sip_options.has_key?("faxdetect") -%>
 ; FAX detection will cause the SIP channel to jump to the 'fax' extension (if it exists)
 ; based one or more events being detected. The events that can be detected are an incoming
@@ -655,6 +662,7 @@ t38pt_udptl=<%= @sip_options["t38pt_udptl"] -%>
 ; faxdetect=both		; Enables both CNG and T.38 detection (same as 'yes')
 faxdetect=<%= @sip_options["faxdetect"] -%>
 <% end -%>
+
 <% if @sip_options.has_key?("mwi") -%>
 ; TODO: WMI is not jet implemented in this puppet asterisk module
 ;----------------------------------------- OUTBOUND MWI SUBSCRIPTIONS -------------------------
@@ -669,6 +677,7 @@ faxdetect=<%= @sip_options["faxdetect"] -%>
 ; MWI received will be stored in the 1234 mailbox of the SIP_Remote context. It can be used by other phones by following the below:
 ; mailbox=1234@SIP_Remote
 <% end -%>
+
 <% if @sip_options.has_key?("localnet") -%>
 ;----------------------------------------- NAT SUPPORT ------------------------
 ;
@@ -774,6 +783,7 @@ externrefresh=<%= @sip_options["externrefresh"] -%>
 ;                                ; (work around more UNIDEN bugs)
 nat=<%= @sip_options["nat"] -%>
 <% end -%>
+
 <% if @sip_options.has_key?("directmedia") -%>
 ;----------------------------------- MEDIA HANDLING --------------------------------
 ; By default, Asterisk tries to re-invite media streams to an optimal path. If there's
@@ -830,6 +840,7 @@ ignoresdpversion=<%= @sip_options["ignoresdpversion"] -%>           ; By default
                                 ; (observed with Microsoft OCS). By default this option is
                                 ; off.
 <% end -%>
+
 <% if @sip_options.has_key?("rtcachefriends") -%>
 ;----------------------------------------- REALTIME SUPPORT ------------------------
 ; For additional information on ARA, the Asterisk Realtime Architecture,
@@ -875,6 +886,7 @@ ignoreregexpire=<%= @sip_options["ignoreregexpire"] -%>            ; Enabling th
                                 ; is still in memory (due to caching or other reasons), the 
                                 ; information will not be removed from realtime storage
 <% end -%>
+
 <% if @sip_options.has_key?("domain") -%>
 ;----------------------------------------- SIP DOMAIN SUPPORT ------------------------
 ; Incoming INVITE and REFER messages can be matched against a list of 'allowed'
@@ -924,6 +936,7 @@ fromdomain=<%= @sip_options["fromdomain"] -%>        ; When making outbound SIP 
                                 ; destinations which do not have a prior
                                 ; account relationship with your server. 
 <% end -%>
+
 <% if @sip_options.has_key?("jbenable") -%>
 ;------------------------------ JITTER BUFFER CONFIGURATION --------------------------
 jbenable=<%= @sip_options["jbenable"] -%>               ; Enables the use of a jitterbuffer on the receiving side of a
@@ -962,8 +975,8 @@ jbtargetextra=<%= @sip_options["jbtargetextra"] -%>           ; This option only
 <% end -%>
 <% if @sip_options.has_key?("jblog") -%>
 jblog=<%= @sip_options["jblog"] -%>                   ; Enables jitterbuffer frame logging. Defaults to "no".
-;-----------------------------------------------------------------------------------
 <% end -%>
+
 <% if @sip_options.has_key?("register") -%>
 ;----------------------------------------- OUTBOUND SIP REGISTRATIONS  ------------------------
 ; Asterisk can register as a SIP user agent to a SIP proxy (provider)

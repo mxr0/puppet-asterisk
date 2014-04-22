@@ -1,4 +1,5 @@
-# This class install default configuration files for Asterisk
+# This class enshured default configuration files and directories for Asterisk
+# esista and are filled with good values
 
 class asterisk::defaults {
   asterisk::context {'macro-dial-external':
@@ -8,6 +9,13 @@ class asterisk::defaults {
 
   package {'tmpreaper':
     ensure => present,
+  }
+  
+  file { '/var/log/asterisk':
+    ensure => 'directory',
+    owner  => 'asterisk',
+    group  => 'asterisk',
+    mode   => '0775',
   }
 
   cron { 'remove call records older than 3 months':

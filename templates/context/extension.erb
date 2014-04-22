@@ -1,0 +1,11 @@
+<%- if @comment -%>
+; <%= @comment %>
+<%- end -%>
+<%- if @exten and !@exten.empty? -%>
+exten => <%= [@exten].compact.flatten.join(',') %>
+<%- end -%>
+<%- if @same and !@same.empty? -%>
+same => n,<%= [@same].compact.flatten.join("\nsame => n,") %>
+same => n,Hangup()
+<%- end -%>
+ 

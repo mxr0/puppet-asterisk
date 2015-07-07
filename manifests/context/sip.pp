@@ -23,6 +23,7 @@ define asterisk::context::sip (
   $fromuser      = false,
   $outboundproxy = false,
   $t38pt_udptl   = false,
+  $defaultexpiry = false,
   $disallow      = [],
   $allow         = [],
   $dtmfmode      = false) {

@@ -8,7 +8,9 @@ type=<%= @account_type %>
 <% if @username != false -%>
 username=<%= @username %>
 <% end -%>
-<% if @defaultuser != false -%>
+<% if @defaultuser != false and @defaultuser != true -%>
+defaultuser=<%= @defaultuser %>
+<% else -%>
 defaultuser=<%= @name %>
 <% end -%>
 <% if @secret != false -%>

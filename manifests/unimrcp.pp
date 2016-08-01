@@ -2,7 +2,7 @@
 class asterisk::unimrcp {
 
     package { 'astunimrcp':
-            ensure => 'latest',
+            ensure => '1.0.0-0RISE1',
             }
 
 }
